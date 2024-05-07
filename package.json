@@ -1,23 +1,40 @@
 {
   "name": "storybook-addon-cookie",
-  "private": true,
-  "repository": "git@github.com:hwookim/storybook-addon-cookie.git",
-  "workspaces": [
-    "packages/*"
+  "version": "8.0.0",
+  "description": "Storybook addon for setting document.cookie",
+  "author": "hwookim <gusdn9754@gmail.com>",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "license": "MIT",
+  "keywords": [
+    "storybook-addon",
+    "cookie",
+    "mocking",
+    "data-state"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hwookim/storybook-addon-cookie.git",
+    "directory": "packages/addon"
+  },
+  "bugs": {
+    "url": "https://github.com/hwookim/storybook-addon-cookie/issues"
+  },
   "scripts": {
-    "dev-addon": "yarn workspace storybook-addon-cookie dev",
-    "build-addon": "yarn workspace storybook-addon-cookie build",
-    "storybook": "yarn workspace demo storybook",
-    "build-storybook": "yarn build-addon && yarn workspace demo build-storybook"
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "prepublishOnly": "yarn build"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@typescript-eslint/parser": "^5.62.0",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^8.10.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "lerna": "^6.6.2",
-    "prettier": "^2.8.8"
+    "typescript": "^5.0.4",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "peerDependencies": {
+    "@storybook/blocks": "^8.0.0",
+    "@storybook/components": "^8.0.0",
+    "@storybook/manager-api": "^8.0.0",
+    "@storybook/preview-api": "^8.0.0",
+    "@storybook/types": "^8.0.0"
   }
 }
